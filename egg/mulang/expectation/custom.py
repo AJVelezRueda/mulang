@@ -1,6 +1,5 @@
 class Custom():
 
-
     def is_standard(self):
         return False
 
