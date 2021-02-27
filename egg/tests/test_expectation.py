@@ -1,5 +1,5 @@
-import pytest
 from mulang import expectation
+import pytest
 
 def test_standard_expectation_are_standard():
     assert expectation.Standard("*","Assigns").is_standard()
@@ -13,3 +13,4 @@ def test_custom_expectation_is_not_standard():
     
 def test_custom_expectation_is_custom():
     assert expectation.Custom().is_custom()
+
