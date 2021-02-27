@@ -1,3 +1,3 @@
-class LikeTarget():
+class Like():
     def __init__(self, value):
         self.value = value

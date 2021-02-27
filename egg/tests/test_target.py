@@ -1,5 +1,5 @@
-from mulang import LikeTarget
+from mulang import target
 import pytest
 
 def test_create_like_target():
-    assert LikeTarget("Hola").value == "Hola"
+    assert target.Like("Hola").value == "Hola"

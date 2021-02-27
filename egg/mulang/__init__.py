@@ -1,6 +1,6 @@
 from pathlib import Path
-from .expectation import *
-from .inspection import *
+
+from .inspection import Inspection
 
 def analyse(analysis):
     pass
