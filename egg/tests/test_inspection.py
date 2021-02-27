@@ -1,4 +1,5 @@
 from mulang import Inspection
+from mulang import target
 import pytest
 
 
@@ -21,3 +22,12 @@ def test_str_of_simplest_inspection():
 
 def test_str_of_a_negated_inspection():
     assert str(Inspection("Assigns", negated=True)) == "Not:Assigns"
+
+def test_str_of_a_inspection_with_target():
+    assert str(Inspection("Assigns", target=target.Named("Hola"))) == "Assigns:=Hola"
+
+def test_str_of_a_inspection_with_like_target():
+    assert str(Inspection("Assigns", target=target.Like("Hola"))) == "Assigns:~Hola"
+
+def test_str_of_a_inspection_with_anyone_target():
+    assert str(Inspection("Assigns", target=target.Anyone())) == "Assigns:*"
