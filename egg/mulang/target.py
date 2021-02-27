@@ -1,31 +1,25 @@
-class Like():
-    def __init__(self, value):
-        self.value = value
-    
-    def __str__(self):
-        return f"~{self.value}"
-
-class Except():
+class Base():
     def __init__(self, value):
         self.value = value
 
     def __str__(self):
-        return f"^{self.value}"
+        return f"{self.prefix()}{self.value}"
 
+class Like(Base):
+    def prefix(self):
+        return "~"
 
-class Named():
-    def __init__(self, value):
-        self.value = value
+class Except(Base):
+    def prefix(self):
+        return "^"
 
-    def __str__(self):
-        return f"={self.value}"
+class Named(Base):
+    def prefix(self):
+        return "="
 
-class Plain():
-    def __init__(self, value):
-        self.value = value
-
-    def __str__(self):
-        return self.value
+class Plain(Base):
+    def prefix(self):
+        return ""
 
 class Anyone():
     def __str__(self):
