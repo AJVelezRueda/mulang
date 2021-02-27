@@ -17,5 +17,7 @@ def test_create_inspection_with_default_args():
     assert an_inspection.target == None
 
 def test_str_of_simplest_inspection():
-    an_inspection = Inspection("Assigns")
-    assert str(an_inspection) == "Assigns"
+    assert str(Inspection("Assigns")) == "Assigns"
+
+def test_str_of_a_negated_inspection():
+    assert str(Inspection("Assigns", negated=True)) == "Not:Assigns"
