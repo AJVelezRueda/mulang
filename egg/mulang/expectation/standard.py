@@ -9,6 +9,7 @@ class Standard():
     def is_custom(self):
         return False
     
-
+    def to_tuple(self):
+        return (self.binding, str(self.inspection))
 
 
